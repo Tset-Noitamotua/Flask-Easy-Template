@@ -16,4 +16,4 @@ cache.init_app(app)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-import views
+import application.views

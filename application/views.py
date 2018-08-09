@@ -3,7 +3,7 @@ from flask import request, render_template, flash, current_app, jsonify
 from application import app, logger, cache
 from application.decorators import threaded_async
 from application.models import *
-from forms import *
+from application.forms import *
 from time import time
 
 
@@ -50,7 +50,7 @@ def send_email(app, to, subject, body):
             print("Status: " + str(status) + " Message: " + str(msg))
             if status == 200:
                 return True
-        except Exception, ex:
+        except Exception as ex:
             print("------------ ERROR SENDING EMAIL ------------" + str(ex.message))
     return False
 
